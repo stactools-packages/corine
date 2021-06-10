@@ -14,3 +14,6 @@ def register_plugin(registry):
     from stactools.corine import commands
 
     registry.register_subcommand(commands.create_corine_command)
+
+
+__version__ = '0.1.5'

@@ -1,0 +1,7 @@
+FROM stactools-corine:latest
+
+RUN conda install -c conda-forge pandoc
+
+COPY . /src/stactools-corine
+RUN pip install -r /src/stactools-corine/requirements-dev.txt
+WORKDIR /src/stactools-corine

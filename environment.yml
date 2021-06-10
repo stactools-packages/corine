@@ -1,0 +1,6 @@
+name: stactools-corine
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - gdal

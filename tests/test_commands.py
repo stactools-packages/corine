@@ -4,7 +4,9 @@ from tempfile import TemporaryDirectory
 import pystac
 
 from stactools.corine.commands import create_corine_command
-from tests.utils import (TestData, CliTestCase)
+from stactools.testing import CliTestCase
+
+from tests import test_data
 
 
 class CreateItemTest(CliTestCase):
@@ -12,8 +14,8 @@ class CreateItemTest(CliTestCase):
         return [create_corine_command]
 
     def test_create_item(self):
-        metadata_href = TestData.get_path(
-            'data-files/corine/U2018_CLC2018_V2020_20u1_FR_GLP.tif.xml')
+        metadata_href = test_data.get_path(
+            'data-files/U2018_CLC2018_V2020_20u1_FR_GLP.tif.xml')
 
         with TemporaryDirectory() as tmp_dir:
             cmd = ['corine', 'create-item', '--cogify', metadata_href, tmp_dir]
